@@ -1,0 +1,259 @@
+/* ===== Базові стилі ===== */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-size: 16px;
+  background: #f0f4f8;
+  margin: 0;
+  color: #2d3748;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 16px;
+}
+
+/* ===== Заголовок ===== */
+header {
+  margin-bottom: 24px;
+}
+
+header h1 {
+  margin: 0 0 4px 0;
+  font-size: 28px;
+  color: #1a202c;
+}
+
+.subtitle {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+}
+
+/* ===== Секції ===== */
+section {
+  background: #fff;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+section h2 {
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== Поля форми ===== */
+.field {
+  margin-bottom: 14px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #4a5568;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: #4299e1;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.15);
+}
+
+.field textarea {
+  resize: vertical;
+}
+
+/* ===== Стан помилки ===== */
+.invalid {
+  border-color: #e53e3e !important;
+}
+
+.error-text {
+  margin: 4px 0 0;
+  font-size: 12px;
+  color: #e53e3e;
+  min-height: 16px;
+}
+
+/* ===== Кнопки ===== */
+.buttons {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 9px 20px;
+  border-radius: 5px;
+  border: 1px solid #cbd5e0;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+#submitBtn {
+  background: #3182ce;
+  color: #fff;
+  border-color: #3182ce;
+  font-weight: 600;
+}
+
+#submitBtn:hover {
+  background: #2b6cb0;
+  border-color: #2b6cb0;
+}
+
+#cancelBtn {
+  background: #fff;
+  color: #e53e3e;
+  border-color: #e53e3e;
+}
+
+#cancelBtn:hover {
+  background: #fff5f5;
+}
+
+#resetBtn {
+  background: #fff;
+  color: #718096;
+}
+
+#resetBtn:hover {
+  background: #f7fafc;
+}
+
+/* ===== Фільтри ===== */
+.filter-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-row .field {
+  flex: 1;
+  min-width: 180px;
+  margin-bottom: 0;
+}
+
+/* ===== Таблиця ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th, td {
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background: #edf2f7;
+  font-weight: 700;
+  color: #4a5568;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+tr:hover td {
+  background: #f7fafc;
+}
+
+/* Колонка «Нотатка» — скорочуємо довгий текст */
+.note-cell {
+  max-width: 260px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.note-preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ===== Бейдж-лічильник ===== */
+.badge {
+  display: inline-block;
+  background: #3182ce;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+}
+
+/* ===== Кнопки дій у таблиці ===== */
+.btn-edit {
+  padding: 5px 10px;
+  font-size: 12px;
+  background: #fff;
+  color: #2b6cb0;
+  border: 1px solid #2b6cb0;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+.btn-edit:hover {
+  background: #ebf8ff;
+}
+
+.btn-delete {
+  padding: 5px 10px;
+  font-size: 12px;
+  background: #fff;
+  color: #e53e3e;
+  border: 1px solid #e53e3e;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete:hover {
+  background: #fff5f5;
+}
+
+/* ===== Пустий стан ===== */
+.empty-state {
+  text-align: center;
+  color: #a0aec0;
+  padding: 32px 0;
+  font-size: 15px;
+  margin: 0;
+}
+
+/* ===== Утиліти ===== */
+.hidden {
+  display: none;
+}

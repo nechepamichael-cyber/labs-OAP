@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ЛР1 – Кабінет студента (Варіант 10)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <h1>📓 Кабінет студента</h1>
+      <p class="subtitle">Варіант 10 — Перелік дисциплін та нотатки</p>
+    </header>
+
+    <main>
+
+      <!-- Форма додавання / редагування -->
+      <section id="create-section">
+        <h2 id="form-title">Додати нотатку</h2>
+
+        <form id="noteForm">
+
+          <div class="field">
+            <label for="courseSelect">Дисципліна</label>
+            <select id="courseSelect" required>
+              <option value="">Оберіть дисципліну</option>
+              <option value="Математичний аналіз">Математичний аналіз</option>
+              <option value="Алгебра та геометрія">Алгебра та геометрія</option>
+              <option value="Програмування">Програмування</option>
+              <option value="Фізика">Фізика</option>
+              <option value="Дискретна математика">Дискретна математика</option>
+              <option value="Бази даних">Бази даних</option>
+              <option value="Операційні системи">Операційні системи</option>
+              <option value="Іноземна мова">Іноземна мова</option>
+            </select>
+            <p class="error-text" id="courseError"></p>
+          </div>
+
+          <div class="field">
+            <label for="titleInput">Заголовок нотатки</label>
+            <input
+              id="titleInput"
+              type="text"
+              placeholder="Напр., Лекція 3 – Інтеграли"
+              required
+              minlength="3"
+              maxlength="100"
+            />
+            <p class="error-text" id="titleError"></p>
+          </div>
+
+          <div class="field">
+            <label for="noteInput">Нотатка</label>
+            <textarea
+              id="noteInput"
+              rows="5"
+              placeholder="Введіть текст нотатки..."
+              maxlength="2000"
+            ></textarea>
+            <p class="error-text" id="noteError"></p>
+          </div>
+
+          <div class="buttons">
+            <button type="submit" id="submitBtn">Додати</button>
+            <button type="button" id="cancelBtn" class="hidden">Скасувати</button>
+            <button type="button" id="resetBtn">Очистити</button>
+          </div>
+
+        </form>
+      </section>
+
+      <!-- Пошук та фільтрація -->
+      <section id="filter-section">
+        <h2>Пошук і фільтрація</h2>
+        <div class="filter-row">
+          <div class="field">
+            <label for="searchInput">Пошук за заголовком</label>
+            <input id="searchInput" type="text" placeholder="Введіть текст для пошуку..." />
+          </div>
+          <div class="field">
+            <label for="filterCourse">Фільтр за дисципліною</label>
+            <select id="filterCourse">
+              <option value="">Усі дисципліни</option>
+              <option value="Математичний аналіз">Математичний аналіз</option>
+              <option value="Алгебра та геометрія">Алгебра та геометрія</option>
+              <option value="Програмування">Програмування</option>
+              <option value="Фізика">Фізика</option>
+              <option value="Дискретна математика">Дискретна математика</option>
+              <option value="Бази даних">Бази даних</option>
+              <option value="Операційні системи">Операційні системи</option>
+              <option value="Іноземна мова">Іноземна мова</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="sortSelect">Сортування</label>
+            <select id="sortSelect">
+              <option value="newest">Спочатку нові</option>
+              <option value="oldest">Спочатку старі</option>
+              <option value="title">За заголовком (А-Я)</option>
+              <option value="course">За дисципліною (А-Я)</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- Список нотаток -->
+      <section id="list-section">
+        <h2>Мої нотатки <span id="countBadge" class="badge">0</span></h2>
+
+        <p id="emptyState" class="empty-state">Нотаток ще немає. Додайте першу!</p>
+
+        <table id="notesTable" class="hidden">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Дисципліна</th>
+              <th>Заголовок</th>
+              <th>Нотатка</th>
+              <th>Дата створення</th>
+              <th>Дії</th>
+            </tr>
+          </thead>
+          <tbody id="notesTableBody">
+            <!-- рядки додає JS -->
+          </tbody>
+        </table>
+
+      </section>
+
+    </main>
+
+  </div>
+</body>
+</html>
